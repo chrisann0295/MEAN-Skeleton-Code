@@ -1,5 +1,8 @@
-angular.module('userService', [])
+// The user service for creating, editing, deleting or updating users
+// When user.get(username) is called in the controller, this is where the
+// call is directed
 
+angular.module('userService', [])
   .factory('User', function($http) {
 
     var userFactory = {}
@@ -11,11 +14,6 @@ angular.module('userService', [])
     userFactory.updateUser = function(username, newInfo) {
       return $http.put('/api/users/' + username, newInfo)
     };
-
-
-    userFactory.getAllUserQuotes = function(username) {
-      return $http.get('/api/allquotes/' + username)
-    }
 
     userFactory.create = function(newInfo) {
       return $http.post('/api/users/', newInfo)
