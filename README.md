@@ -28,6 +28,11 @@ Once the app is set up, you should have a page that looks like this:
 
     $ nodemon server.js
 
+The app should be running on localhost:8080 after this step.
+
+Below are notes which define and explain the different techniques and components of this MEAN app.
+
+
 ######Installing packages:
 Two ways:
 
