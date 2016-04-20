@@ -8,7 +8,7 @@ NodeJs
 
 This repository has the skeleton code needed to create a MEAN app. Comments on different files briefly explain the objectives of the files and methods (controllers, services, views, API, etc). 
 
-Also, I have added notes that I created to undestand the working of the different technologies while learning them. These notes are based from the book: [Mean Machine](https://leanpub.com/mean-machine) (which I **highly** recommend for anyone trying to learn these technologies).
+Also, I have added notes that I created to undestand the working of the different technologies while learning them. These notes (check repository's Wiki) are based from the book: [Mean Machine](https://leanpub.com/mean-machine) (which I **highly** recommend for anyone trying to learn these technologies).
 
 Please feel free to comment on anything that can be done better, both in the code and the notes!
 
