@@ -14,7 +14,8 @@ Please feel free to comment on anything that can be done better, both in the cod
 
 Once the app is set up, you should have a page that looks like this:
 
-[MEAN Stack Skeleton App](http://i.imgur.com/dxa4X4D.png)
+![MEAN Stack Skeleton App](http://i.imgur.com/dxa4X4D.png)
+
 
 ### Setting up the environment
 ######Starting the Node application:
