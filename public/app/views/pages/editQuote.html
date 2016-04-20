@@ -1,0 +1,94 @@
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Edit Quote</legend>
+
+     <div class="form-group" data-ng-repeat="speaker in edit.quoteSpeakers">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+          <input type="text"  ng-change="edit.changed(); edit.fieldsToUpdate.quote = true" ng-model="speaker.speakerName" speakerName=""  class="form-control" id="inputDefault" placeholder="{{ speaker.speakerName }}">
+        </div>
+
+        <div class="col-md-8">
+          <input type="text" ng-change="edit.changed(); edit.fieldsToUpdate.quote = true" ng-model="speaker.text" text=""  class="form-control" id="inputDefault" placeholder="{{ speaker.text }}">
+        </div>
+
+        <div class="col-md-1" style="margin-top: 5px;">
+          <button type="button" ng-show="$last" ng-click="edit.removeSpeaker(); edit.changed(); edit.fieldsToUpdate.quote = true; "  tooltips tooltip-side="top" tooltip-size="medium" tooltip-speed="fast" tooltip-delay="70"  title="Click to delete last speaker and quote" class="btn btn-danger btn-sm">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-2" style="padding-left: 4px;">
+        <button class="btn btn-info btn-sm" ng-click="edit.addNewSpeaker()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          Add Speakers
+        </button>
+      </div>
+    </div>
+  </fieldset>
+
+  <br></br>
+
+  <fieldset>
+    <legend>Other Details</legend>
+      <div class="form-group">
+        <div class="col-md-1"></div>
+        <label for="inputDefault" class="col-lg-1 control-label">When</label>
+        <div class="col-lg-9">
+          <input type="text" ng-change="edit.changed(); edit.fieldsToUpdate.date = true;" ng-model="edit.showDate" class="form-control" id="inputDefault" placeholder="{{ edit.showDate}} (optional)" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-1"></div>
+        <label for="inputDefault" class="col-lg-1 control-label">Where</label>
+        <div class="col-lg-9">
+          <input type="text" ng-change="edit.changed(); edit.fieldsToUpdate.location = true;" ng-model="edit.showLocation" class="form-control" id="inputDefault" placeholder="{{ edit.showLocation}} (optional)">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-1"></div>
+        <label for="inputDefault" class="col-lg-1 control-label">Context</label>
+        <div class="col-lg-9">
+          <input type="text" ng-change="edit.changed(); edit.fieldsToUpdate.context = true;" ng-model="edit.showContext" class="form-control" id="inputDefault" placeholder="{{ edit.showContext }} (optional)">
+        </div>
+      </div>
+      <br></br>
+
+      <div class="form-group">
+        <div class="col-md-1"></div>
+        <div class="col-lg-1">
+          <a style="color:red;" ng-model="edit.showFav" ng-class="{false: 'fa fa-heart fa-border fa-2x', true: 'fa fa-border fa-heart-o fa-2x'}[!edit.showFav]" ng-click="edit.showFav = !edit.showFav ; edit.changed(); edit.fieldsToUpdate.fav = true;">{{!edit.showFav && ' ' || ' '}} </a>
+        </div>
+        <div class="col-md-1">
+          <a href="#" ng-click="edit.saveUpdateQuote()" ng-if="edit.quoteSpeakers.length > 0"  ng-disabled="!!!edit.quoteSpeakers[edit.quoteSpeakers.length-1].speakerName || !!!edit.quoteSpeakers[edit.quoteSpeakers.length-1].text " class="btn btn-success">
+            Save Quote</a>
+
+          <button class="btn btn-info btn" ng-if="edit.quoteSpeakers.length < 1" ng-click="edit.addNewSpeaker()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Speakers
+          </button>
+        </div>
+        <div class="col-md-1" style="margin-left: 50px;">
+          <a href="#" class="btn btn-danger" ng-click="edit.cancelEditQuote()">Cancel</a>
+        </div>
+        <div class="col-md-7"></div>
+        
+      </div>
+  </fieldset>
+</form> 
+
+<br></br>
+<!-- 
+
+  <div id="choicesDisplay">
+      {{  edit.quoteSpeakers }}
+   </div>
+ -->

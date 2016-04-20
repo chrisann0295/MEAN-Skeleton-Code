@@ -1,0 +1,95 @@
+
+<div class="row col-sm-8 col-sm-offset-2">
+  <div class="jumbotron">
+    <form  class="form-horizontal" ng-submit="register.createUser()">
+        <legend style="color:#18bc9c" align="center">Sign Up!</legend>
+
+        <!-- Input First Name -->
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">First Name</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="First Name" ng-model="register.name" required>
+          </div>
+        </div>
+
+        <!-- Input Last Name -->
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Last Name</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Last Name" ng-model="register.last_name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Gender</label>
+          <div class="col-lg-6">
+            <select ng-model="register.gender" convert-to-number class="form-control" id="select" tooltips tooltip-side="bottom" tooltip-size="medium" tooltip-speed="fast" tooltip-delay="70"  title="This is used only for user avatar">
+              <option value="0">Girl </option>  
+              <option value="1">Guy</option>
+              <option value="2">Too cool to say</option> 
+            </select>
+          </div>
+          <div class="col-lg-1" style="padding-top: 8px;" >
+            <img ng-if="register.gender == 1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADgElEQVRYR71XXVIaQRD+BkheYpXeIOQtcakS31Ipl+AJHE6gnkBzAvUEwROIJ3A8gcimUnkLqQKTN8kJglXyYhY61cMODMvssv7EfaCK3Z7ur/++7hG4x/P2vSwWXmILhCoJlAVQnBwnNAloE0TzKjg7z6pWZBH0PsiyyOMAAjKLPAE9ATRuczjuNVU/7cxCAKWKPABwmMWwQ6Y/JOz+DJRKOp8KwPPliRDYeaDxaXYIjUEen1zRSATg+XJHCJw81rg5z/UxyGEzDsIJYNWvbeUENQCsPBUA1sMgui21buucAcDFhgJOBFB+SsO2rhFwfNVS++bdBEDUYt+f2muXI+Ed3vz6pnr8bQLA82VDCGz/L89tvUQ47wZKt/QEQKki6TmMGxudltK29U8U/uvnBIARNjtfVFMDKG3IKnK4yAKACD9GwGEOWHlUmz4EABFOu4HSxPTOlzIvcJYFtFNmEQD2VAisTekMl51AVc3/tKLlswC4qD8nAkwDwAoGeVSXhlAQ+MhK7NbRw6kAbtmZhwi/hUCj01J6dni+bEdOHPEENbr0oTQANllocgLQ/araxloU/glZEaGHIdq2jK4tX/KI7nHaShXJoHiwjZ8FKTgyXsyEHFgG4Zir1xVaXcwCewT0u4HaZfAG1NxssQHMFVT00Rixu8QmkTgIz5dKCGzZHrp08LshocZjWrehV5HXZrthA8O/2DdUyd9tnohzuQ1itSLrOWAvXjNGR/4F6gagGUyiWJUrSyP8YSEuvm6gnINIgyigmBR+29MwRM92wAZpFSaYDcVMRdNsq7ny/Nh3XJh2Z42ZcDoH+hRiM17NLqMRcJ1vCnF+jzPMuHrP0BHQNeCYhHbfOwHwxoTxukZAoxsoXmCcj51mI2BYVQNggVdDNGeYD5hrxYeGP84Bhuh4PZuM4wglbyoTsqAQ61lCmwbMMWmPbnOom91wbie0WylpkcwaCR3ZES7Miudq4TkA8XQwiOEdakltlZZ32zjPiUEe5UxbcVThTLfLkYE+Qex3W2enWbz3KrVtAapb++UNhai60pl8LxhPPBsEVztfueoU4jKubLxRizWADmfujECicXYm9WYUpYPn+pjfYw8DipRML6m2DOHyNg+Zdj9ceDfURLUh+TbMQF5nSQHnm++Tadxg9GQCYISj2pDRcsEzw9TIDQhtCDQphLpP6/4DJ0fZAB2Ozv8AAAAASUVORK5CYII="/>
+
+            <img ng-if="register.gender == 0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADdUlEQVRYR7VXTVITURD+egbcaBXxBIadxcQy7CzLiXACXk4AnkA8AXACwwkIJ/BxAvJjWe7AIlF3hhMYqsIGkrTVr2aGl+FNMgPlbKd/vu7XP18THvm9CuvvYxMX3S/touaoqILIB7X6NjErEFRan4FzApojD8eDlh4usj8XQBzd7S1f/v6uB5V3aoM9HBFQXmQYgDhvjDwczgNyD0DwVlXJx54jOjFYyuF4RkQyMrlBXQJw6c4ACEK1Q4Sjok5yyA95jM3+N32elk0AmMiXcJbD2ENFhsz41O/qpm3gDkBNnRFQfaj1vHrM+GCDMAD+Y+pduGaewwCohOoUhI28UYgcM34Q4XURnViWgcG1h3XpDnr5RpWXnuBPAUNXmEL1vupWEKomEbYL6CaiUT00KAjVLhE+5zLCaI98KLuvHwpCstDv6FUBsDAKZlxOgd1fXa1dQKMaagBYyRVIJMRjrFMlVC0QknluGxDHRGasNhaNVXlKfxn7BZ/kgCo19Tdjwh30Onq/SEQiGwFRBMiucAaWFCPjRACwy8nIw3M76qhYt3mME9dEi22YRQUu9Tr60LYrewQeTlNzup0JAFNsSqXHClarDkceVl1PYs+TuMoTYBlj3g2A0QZj3wYQhGpAhBdiMJ0dy0nSUQ4AuwDkv7ERfy4A5u1lN9ipjnaFmjDOs7ohmqriCNc+mjPtGtlLF720YRKZQZVKfdEiXCRfqSkp7L27DNxvw9zVL4RlApRowpfzCjN2Vt5QpadTnMZLz7S5cxAxWgyc9Ltahovzi55EinQFjHavq+fukiBUR7JvbDY1BQ7njeLMal+U5vR/ZwsCGN9gleYREUH4s6NNUT3mCxxcg9lkWAaW4QOzhWh5SxOIokAk9UTYSetNGHXpJgNgraYaHvAxw7iTSuUBkuUcwFWvow3BNQDycAJmNK59HCxaSom9ZZiicwFlxnG/q01W7jhhjrUsXJ8ZTUxw7Gq7tbC+RWDlSnkKSNLqCQDp0WdTCHfPvdPNFcQYMqGc81gxOOwxPXMXZLVLnvcuImN3173LKAIhzGfFEE85saK9Lq0DQP7JTVguQkpl6kEyRtiaIaUu5DG7YcJQ5oC5CQlyNamYkMZ6MkemPso+ocqMKgEllvGcYswSTL+rq2YcTyB1Uh7foFn4OhZwWXdekWcQWQHzD34ct1QYaqq3AAAAAElFTkSuQmCC"/>
+
+            <img ng-if="register.gender == 2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEE0lEQVRYR8VXUW4iRxB9NcOilbKSWecAYf+SgLT4L4qCjU/g9gmWG5g9gfEJDCeIcwK3T7ADRFH+bGtxkr9lD7COV8LSCs9QUTXdeBhmzEAiZf5ouqtfV716/ZrwL75qXQUAeDjQ+5uGoU0XfldXyiecy/qIcfjnQOtNYm0EoNxQpa+muARjtp7A9x52RoG+WxfERgCqu6oN4BiM2akJCsDJsK9lfK1vCUDlR1WjAg6IKXg/OO+lRavU1RURXsf/Y8b1zUDX0uZXf1INeNjjEBc3v+mr+JwlAPPTuVmMAAQ97OuuG/r2B1X+8hx3LuVSkudfUPrrdz1ycyp11SLgAIRGbMOlLC0DmKF9x4wLAGV70s/Dvi7JRi+meMNAk4CF0zJwRcDZ2MMvAqy6q4QPW5IZACMiHGCK/eGvWjpn/qVyoLqr2AasMeMjIigqmDofAShJUCYEHmBINwVKxGhYsDLWkXTDhybCNy7WsK+X9ksHIP1N2JPNb6PJ3td+sWOIxuiFD2jGUx0/jeGPD5m7JwT9FE1a236xJyBk7XCg4+Ww/E1hjakfoc0hGvDRlvQx4+3NQHfyUNyuPxUQHOGECgiY0U5b/2QbOkKus/kCCQmnq9ozE4Al3AcwrtNSlycTRqoJr8ceXmWJVCYAl8ZwgldZNV8Fwva/dFRm+eYA7ImF5a1wgh3/2Uzl4uJi5kT4GYxusp3M3QC8GQ704QIx6+pKpDqa4LBQxKV0yNhD12XEAJDFHuGUgLL8Hnt4+WKKv6dA94++bsUFSIBNgXby8qnUVRNA+95HLZ7u73dVxwOOXEyJxcBoyngrMcjWybQcREwIB9KvogVZBBIlTJYlbUw2c0R2Ma3A1WxrBo8ARK0Yki61CoBROcY7JtLMuCOwIkIzjS9JAKY1CTWTbUbvsQRAx6B6ogSJFpObb8uNJcvlxlNLwPg4BVqmBG6iJWGLGc3oAQ1DQgLf9PVOFtuN8nkoJQm5REIxLQ9Q/jMEROa+6CyQMG0D14YcYid5ha5qP/f/Wm2YDGozMgLjclPPZwleG3sory1EcQZvIsUxX/GkU0pVQpv+Yw6x7y4jEai4KXmqDLE75AIR2lQw/uIk92U01wZgdBtOGtt+sWsMhbgjxkkW6UzNCcfigqTfb6PJ0XahGLiWy30dG0PCuBaDIaqFEIfWkIgqbonBEDBEM0PCjJJsal3SZ2tINAo4d5uLR8hlSBxzrWCUbdC7YV+/NHY8gkhuM82UAji793EWt2Qma+KcxNDksWQpprTHgI7Xbw1Tqow7evxWm1JrywVtkFXrSl2JyTSq6b4ctrzBIfRKW55HZBZYLu8SIeh/9TDJA8BywdzzZj6DktdwnjgyZ6OnmfMQ/9vjdK71s+c5NvWMsvYfJBFjME3Ds5QAAAAASUVORK5CYII="/>
+          </div>
+        </div>
+
+        <!-- Input Last Name -->
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="register.email" required>
+          </div>
+        </div>
+
+        <!-- Input User Name -->
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Username</label>
+          <div class="col-lg-6">
+            <input type="text" ng-change="register.checkUsername()" class="form-control" id="inputBox" placeholder="Username" ng-model="register.username" required> 
+          </div>
+          <div class="col-lg-1" style="padding-top: 8px; color:#3498db">
+            <div ng-if="register.processing">
+              <i class="fa fa-spinner fa-lg faa-spin animated"></i>
+            </div>
+          </div>
+          <div ng-if="register.showText && !register.processing" style="padding-top: 8px;">
+            <div ng-if="register.usernameAvailable" style="color:#18bc9c"> Username Available! </div>
+            <div ng-if="!register.usernameAvailable" style="color:red"> Username Not Available! </div>
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="register.password" required>
+
+          </div>
+        </div>
+
+        <div class="alert alert-danger" ng-if="register.error">
+          {{ register.error}}
+        </div>
+
+
+        <!-- BUTTONS -->
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button ng-if="!register.usernameAvailable" type="submit" class="btn btn-info" disabled>Sign Up!</button>
+            <button ng-if="register.usernameAvailable" type="submit" class="btn btn-info">Sign Up!</button>
+            <button ng-click="register.cancelRegister()" class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <!-- <div class="progress progress-striped active">
+          <div class="progress-bar progress-bar-success" style="width: 100%"></div>
+        </div> -->
+    </form>
+  </div>
+

@@ -1,0 +1,38 @@
+<div class="row col-sm-6 col-sm-offset-3">
+  <div class="jumbotron">
+    <form ng-submit="login.doLogin()" class="form-horizontal">
+        <legend style="color:#18bc9c ">Log In!</legend>
+
+        <!-- Input Username -->
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Username</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Username" ng-model="login.username" required>
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="login.password" required>
+          </div>
+        </div>
+
+        <div class="alert alert-danger" ng-if="login.error">
+          {{ login.error}}
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="submit" class="btn btn-primary" ng-if="!login.processing">Login</button>
+            <button  ng-click="login.newUser()"class="btn btn-info" tooltips tooltip-side="bottom" tooltip-size="medium" tooltip-speed="fast" tooltip-delay="70"  title="Sign up for a new account!">Sign Up!</button>
+          </div>
+        </div>
+
+
+    </form>
+  </div>
+
+</div>
